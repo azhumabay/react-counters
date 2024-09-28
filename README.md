@@ -7,7 +7,7 @@
 - **JavaScript**
 - **CSS**
 - **React**
-- **Webpack/Vite**
+- **Vite**
 - **UI**: react-bootstrap
 
 ## Основные функции
