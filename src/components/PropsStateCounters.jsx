@@ -20,7 +20,7 @@ export default function PropsStateCounters() {
         <span className="text-info">useState hook</span>
       </h3>
       <Row className="justify-content-center">
-        <Col xs={12} md={4} lg={4} className="mb-5">
+        <Col xs={12} md={6} lg={4} className="mb-5">
           <Counter
             count={count}
             increment={incrementHandler}
@@ -28,7 +28,7 @@ export default function PropsStateCounters() {
             title={"useState"}
           />
         </Col>
-        <Col xs={12} md={4} lg={4} className="mb-5">
+        <Col xs={12} md={6} lg={4} className="mb-5">
           <Counter
             count={count}
             increment={incrementHandler}
