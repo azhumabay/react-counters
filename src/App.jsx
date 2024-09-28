@@ -1,12 +1,12 @@
 import { Container, Row, Col } from "react-bootstrap";
-import Header from "./components/Header";
 import Counter from "./components/Counter";
+import AppHeader from "./components/AppHeader";
 import CounterCustomHook from "./components/CounterCustomHook";
 
 export default function App() {
   return (
     <>
-      <Header />
+      <AppHeader />
 
       <main>
         <Container>

@@ -1,6 +1,6 @@
 import { Navbar, Nav, Container } from "react-bootstrap";
 
-const Header = () => (
+const AppHeader = () => (
   <Navbar
     bg="dark"
     variant="dark"
@@ -24,4 +24,4 @@ const Header = () => (
   </Navbar>
 );
 
-export default Header;
+export default AppHeader;
