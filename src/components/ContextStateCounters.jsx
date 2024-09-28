@@ -1,10 +1,10 @@
 import { useContext } from "react";
 import Counter from "./Counter";
 import { Row, Col } from "react-bootstrap";
-import { CountContext } from "../context/CounterStateProvider";
+import { stateContext } from "../context/StateProvider";
 
 export default function ContextStateCounters() {
-  const { count, increment, decrement } = useContext(CountContext);
+  const { count, increment, decrement } = useContext(stateContext);
 
   return (
     <>
@@ -18,7 +18,7 @@ export default function ContextStateCounters() {
             count={count}
             increment={increment}
             decrement={decrement}
-            title={"useState"}
+            title={"useState + useContext"}
           />
         </Col>
         <Col xs={12} md={6} lg={4} className="mb-5">
@@ -26,7 +26,7 @@ export default function ContextStateCounters() {
             count={count}
             increment={increment}
             decrement={decrement}
-            title={"useState"}
+            title={"useState + useContext"}
           />
         </Col>
       </Row>

@@ -25,7 +25,7 @@ export default function PropsStateCounters() {
             count={count}
             increment={incrementHandler}
             decrement={decrementHandler}
-            title={"useState"}
+            title={"useState + Props"}
           />
         </Col>
         <Col xs={12} md={6} lg={4} className="mb-5">
@@ -33,7 +33,7 @@ export default function PropsStateCounters() {
             count={count}
             increment={incrementHandler}
             decrement={decrementHandler}
-            title={"useState"}
+            title={"useState + Props"}
           />
         </Col>
       </Row>

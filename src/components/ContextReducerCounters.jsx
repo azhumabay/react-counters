@@ -1,15 +1,15 @@
-import { useReducer } from "react";
-import Counter from "./Counter";
+import { useContext } from "react";
+import { reducerContext } from "../context/ReducerProvider";
 import { Row, Col } from "react-bootstrap";
-import { counterReducer, initialState } from "../reducer";
+import Counter from "./Counter";
 
-export default function PropsReducerCounters() {
-  const [state, dispatch] = useReducer(counterReducer, initialState);
+export default function ContextReducerCounters() {
+  const { state, dispatch } = useContext(reducerContext);
 
   return (
     <>
       <h3 className="text-center mb-5 text-white">
-        Two counters with shared state via props, implemented using a{" "}
+        Two counters with shared state via context, implemented using a{" "}
         <span className="text-info">reducer</span>
       </h3>
       <Row className="justify-content-center">
@@ -18,7 +18,7 @@ export default function PropsReducerCounters() {
             count={state.count}
             increment={() => dispatch({ type: "increment" })}
             decrement={() => dispatch({ type: "decrement" })}
-            title={"useReducer + Props"}
+            title={"useReducer + Context"}
           />
         </Col>
         <Col xs={12} md={6} lg={4} className="mb-5">
@@ -26,7 +26,7 @@ export default function PropsReducerCounters() {
             count={state.count}
             increment={() => dispatch({ type: "increment" })}
             decrement={() => dispatch({ type: "decrement" })}
-            title={"useReducer + Props"}
+            title={"useReducer + Context"}
           />
         </Col>
       </Row>

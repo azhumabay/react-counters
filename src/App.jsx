@@ -1,11 +1,13 @@
-import { Container, Row, Col } from "react-bootstrap";
+import { Container } from "react-bootstrap";
 import AppHeader from "./components/AppHeader";
 import UnlinkedCounters from "./components/UnlinkedCounters";
 import PropsStateCounters from "./components/PropsStateCounters";
 import PropsCustomHookCounters from "./components/PropsCustomHookCounters";
 import PropsReducerCounters from "./components/PropsReducerCounters";
-import { CounterStateProvider } from "./context";
+import { CustomHookProvider, ReducerProvider, StateProvider } from "./context";
 import ContextStateCounters from "./components/ContextStateCounters";
+import ContextCustomHookCounters from "./components/ContextCustomHookCounters";
+import ContextReducerCounters from "./components/ContextReducerCounters";
 
 export default function App() {
   return (
@@ -17,9 +19,17 @@ export default function App() {
         <PropsCustomHookCounters />
         <PropsReducerCounters />
 
-        <CounterStateProvider>
+        <StateProvider>
           <ContextStateCounters />
-        </CounterStateProvider>
+        </StateProvider>
+
+        <CustomHookProvider>
+          <ContextCustomHookCounters />
+        </CustomHookProvider>
+
+        <ReducerProvider>
+          <ContextReducerCounters />
+        </ReducerProvider>
       </Container>
     </>
   );
