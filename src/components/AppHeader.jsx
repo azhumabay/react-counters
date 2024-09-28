@@ -1,4 +1,4 @@
-import { Navbar, Nav, Container, Button } from "react-bootstrap";
+import { Navbar, Container, Button } from "react-bootstrap";
 
 const AppHeader = ({ toggleTheme, theme }) => (
   <Navbar
@@ -8,9 +8,9 @@ const AppHeader = ({ toggleTheme, theme }) => (
     className="px-3 p-4 border-bottom border-secondary mb-5"
   >
     <Container>
-      <Navbar.Brand href="#home" className="fs-2">
+      <h1 className={`text-${theme === "light" ? "dark" : "light"}`}>
         React Counters
-      </Navbar.Brand>
+      </h1>
       <Button
         onClick={toggleTheme}
         variant={theme === "light" ? "dark" : "light"}
