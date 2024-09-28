@@ -8,10 +8,10 @@ const AppHeader = () => (
     className="px-3 p-4 border-bottom border-secondary mb-5"
   >
     <Container>
-      <Navbar.Brand href="#home">React Counters</Navbar.Brand>
+      <Navbar.Brand href="#home" className="fs-2">React Counters</Navbar.Brand>
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
       <Navbar.Collapse id="basic-navbar-nav">
-        <Nav className="ml-auto">
+        <Nav className="ml-auto fs-5">
           <Nav.Link href="#home">useState</Nav.Link>
           <Nav.Link href="#link">useCounter (custom hook)</Nav.Link>
           <Nav.Link href="#link">counterReducer (useReducer)</Nav.Link>
