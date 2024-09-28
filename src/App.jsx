@@ -8,27 +8,38 @@ import { CustomHookProvider, ReducerProvider, StateProvider } from "./context";
 import ContextStateCounters from "./components/ContextStateCounters";
 import ContextCustomHookCounters from "./components/ContextCustomHookCounters";
 import ContextReducerCounters from "./components/ContextReducerCounters";
+import { useEffect, useState } from "react";
 
 export default function App() {
+  const [theme, setTheme] = useState("dark");
+
+  const toggleTheme = () => {
+    setTheme((prevTheme) => (prevTheme === "light" ? "dark" : "light"));
+  };
+
+  useEffect(() => {
+    document.body.className = theme === "light" ? "light-theme" : "dark-theme";
+  }, [theme]);
+
   return (
     <>
-      <AppHeader />
+      <AppHeader theme={theme} toggleTheme={toggleTheme} />
       <Container>
-        <UnlinkedCounters />
-        <PropsStateCounters />
-        <PropsCustomHookCounters />
-        <PropsReducerCounters />
+        <UnlinkedCounters theme={theme} />
+        <PropsStateCounters theme={theme} />
+        <PropsCustomHookCounters theme={theme} />
+        <PropsReducerCounters theme={theme} />
 
         <StateProvider>
-          <ContextStateCounters />
+          <ContextStateCounters theme={theme} />
         </StateProvider>
 
         <CustomHookProvider>
-          <ContextCustomHookCounters />
+          <ContextCustomHookCounters theme={theme} />
         </CustomHookProvider>
 
         <ReducerProvider>
-          <ContextReducerCounters />
+          <ContextReducerCounters theme={theme} />
         </ReducerProvider>
       </Container>
     </>

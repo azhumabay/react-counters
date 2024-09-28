@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Row, Col } from "react-bootstrap";
 import Counter from "./Counter";
 
-export default function PropsStateCounters() {
+export default function PropsStateCounters({ theme }) {
   const [count, setCount] = useState(0);
 
   const incrementHandler = () => {
@@ -15,7 +15,11 @@ export default function PropsStateCounters() {
 
   return (
     <>
-      <h3 className="text-center mb-5 text-white">
+      <h3
+        className={`text-center mb-5 ${
+          theme === "dark" ? "text-white" : "text-dark"
+        }`}
+      >
         Two counters with state shared via props, implemented using the{" "}
         <span className="text-info">useState hook</span>
       </h3>
@@ -26,6 +30,7 @@ export default function PropsStateCounters() {
             increment={incrementHandler}
             decrement={decrementHandler}
             title={"useState + Props"}
+            theme={theme}
           />
         </Col>
         <Col xs={12} md={6} lg={4} className="mb-5">
@@ -34,6 +39,7 @@ export default function PropsStateCounters() {
             increment={incrementHandler}
             decrement={decrementHandler}
             title={"useState + Props"}
+            theme={theme}
           />
         </Col>
       </Row>

@@ -1,8 +1,12 @@
 import { Card, Button } from "react-bootstrap";
 
-export default function Counter({ count, increment, decrement, title }) {
+export default function Counter({ count, increment, decrement, title, theme }) {
   return (
-    <Card bg="dark" text="light" className="mb-2 w-100">
+    <Card
+      bg={theme === "dark" ? "dark" : "light"}
+      text={theme === "dark" ? "light" : "dark"}
+      className="mb-2 w-100"
+    >
       <Card.Header className="border-bottom border-secondary fs-5 text-truncate">
         {title}
       </Card.Header>

@@ -1,25 +1,22 @@
-import { Navbar, Nav, Container } from "react-bootstrap";
+import { Navbar, Nav, Container, Button } from "react-bootstrap";
 
-const AppHeader = () => (
+const AppHeader = ({ toggleTheme, theme }) => (
   <Navbar
-    bg="dark"
-    variant="dark"
+    bg={theme === "light" ? "light" : "dark"}
+    variant={theme === "dark" ? "dark" : "light"}
     expand=""
     className="px-3 p-4 border-bottom border-secondary mb-5"
   >
     <Container>
-      <Navbar.Brand href="#home" className="fs-2">React Counters</Navbar.Brand>
-      <Navbar.Toggle aria-controls="basic-navbar-nav" />
-      <Navbar.Collapse id="basic-navbar-nav">
-        <Nav className="ml-auto fs-5">
-          <Nav.Link href="#home">useState</Nav.Link>
-          <Nav.Link href="#link">useCounter (custom hook)</Nav.Link>
-          <Nav.Link href="#link">counterReducer (useReducer)</Nav.Link>
-          <Nav.Link href="#link">Props + useState</Nav.Link>
-          <Nav.Link href="#link">useContext + useCounter</Nav.Link>
-          <Nav.Link href="#link">useContext + useReducer</Nav.Link>
-        </Nav>
-      </Navbar.Collapse>
+      <Navbar.Brand href="#home" className="fs-2">
+        React Counters
+      </Navbar.Brand>
+      <Button
+        onClick={toggleTheme}
+        variant={theme === "light" ? "dark" : "light"}
+      >
+        {theme === "light" ? "Dark" : "Light"}
+      </Button>
     </Container>
   </Navbar>
 );
