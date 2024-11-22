@@ -5,7 +5,6 @@
 ## Стек
 
 - **JavaScript**
-- **CSS**
 - **React**
 - **Vite**
 - **UI**: react-bootstrap
